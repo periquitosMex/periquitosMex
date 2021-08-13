@@ -1,9 +1,18 @@
 import React from 'react';
+import styled from 'styled-components';
+import Post from '../components/Posts/Post';
+
+const InicioStyle = styled.div`
+  width: 100vw;
+  height: auto;
+`;
 
 export default function Inicio() {
   return (
-    <div>
-      <h1>este es el inicio del final</h1>
-    </div>
+    <InicioStyle>
+      <div className="container">
+        <Post />
+      </div>
+    </InicioStyle>
   );
 }

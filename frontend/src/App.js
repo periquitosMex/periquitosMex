@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 import NavBar from './components/GlobalComponents/NavBar';
@@ -11,20 +11,26 @@ import SocioPMX from './pages/SocioPMX';
 import Tienda from './pages/Tienda';
 import Header from './components/GlobalComponents/Header';
 import Footer from './components/GlobalComponents/Footer';
+import Burger from './components/Burger/Burger';
 
 const AppStyle = styled.div`
+  width: 100vw;
   .homePage {
     display: flex;
   }
 `;
 
 function App() {
+  const [open, setOpen] = useState(false);
   return (
     <AppStyle>
       <Router>
         <Header />
+        <div>
+          <Burger open={open} setOpen={setOpen} />
+          <NavBar open={open} setOpen={setOpen} />
+        </div>
         <div className="homePage">
-          <NavBar />
           <Switch>
             <Route path="/tienda">
               <Tienda />

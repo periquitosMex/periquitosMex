@@ -12,6 +12,7 @@ const FooterStyle = styled.div`
   background-color: var(--header-bg);
   .text {
     color: var(--text-para);
+    font-size: 1.2rem;
   }
   .right {
     display: flex;
