@@ -1,5 +1,4 @@
 import React from 'react';
-import Burger from '../Burger/Burger';
 import Text from '../GlobalComponents/Text';
 
 export default function PostItem({
@@ -10,7 +9,6 @@ export default function PostItem({
     <div>
       <div className="postItem_heading">{title}</div>
       <Text>{desc}</Text>
-      <Burger />
     </div>
   );
 }

@@ -10,6 +10,7 @@ const HeaderStyle = styled.div`
   width: 100vw;
   background-color: var(--header-bg);
   padding: 1.2rem;
+  z-index: 50000;
   .imageLogo {
     width: 95px;
   }

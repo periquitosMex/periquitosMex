@@ -1,63 +1,54 @@
 import React from 'react';
-import { bool, func } from 'prop-types';
 import styled from 'styled-components';
 
-const BurgerStyle = styled.div`
+export const StyledBurger = styled.button`
   position: absolute;
-  top: 5%;
+  top: 10%;
   left: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   width: 2rem;
   height: 2rem;
-  background-color: transparent;
+  background: transparent;
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 10;
-
-  &:focus {
-    outline: none;
-  }
-
-  div {
+  z-index: 20;
+  span {
     width: 2rem;
-    height: 0.25rem;
-    background-color: white;
-    border-radius: 10px;
+    height: 0.3rem;
+    background-color: var(--text-header);
+    border-radius: 30px;
     transition: all 0.3s linear;
     position: relative;
     transform-origin: 1px;
-
     :first-child {
-      transform: ${({ open }) => (open ? 'rotate(45deg)' : 'rotate(0)')};
+      transform: ${({ openNav }) => (openNav ? 'rotate(45deg)' : 'rotate(0)')};
     }
-
     :nth-child(2) {
-      opacity: ${({ open }) => (open ? '0' : '1')};
-      transform: ${({ open }) => (open ? 'translateX(20px)' : 'translateX(0)')};
+      opacity: ${({ openNav }) => (openNav ? '0' : '1')};
+      transform: ${({ openNav }) =>
+        openNav ? 'translateX(20px)' : 'translateX(0)'};
     }
-
     :nth-child(3) {
-      transform: ${({ open }) => (open ? 'rotate(-45deg)' : 'rotate(0)')};
+      transform: ${({ openNav }) => (openNav ? 'rotate(-45deg)' : 'rotate(0)')};
     }
   }
 `;
 
-// eslint-disable-next-line arrow-body-style
-const Burger = ({ open, setOpen }) => {
+export default function Burger({ openNav, setopenNav }) {
+  const isExpanded = !!openNav;
   return (
-    <BurgerStyle open={open} onClick={() => setOpen(!open)}>
-      <div />
-      <div />
-      <div />
-    </BurgerStyle>
+    <StyledBurger
+      aria-label="Toggle menu"
+      aria-expanded={isExpanded}
+      openNav={openNav}
+      onClick={() => setopenNav(!openNav)}
+    >
+      <span />
+      <span />
+      <span />
+    </StyledBurger>
   );
-};
-
-Burger.propTypes = {
-  open: bool.isRequired,
-  setOpen: func.isRequired,
-};
-export default Burger;
+}

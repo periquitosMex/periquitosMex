@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
+import { useOnClickOutside } from './components/Burger/Hook';
 import NavBar from './components/GlobalComponents/NavBar';
 import BibliotecaPMX from './pages/BibliotecaPMX';
 import SalonDeFama from './pages/SalonDeFama';
@@ -21,14 +22,21 @@ const AppStyle = styled.div`
 `;
 
 function App() {
-  const [open, setOpen] = useState(false);
+  const [openNav, setopenNav] = useState(false);
+  const menuId = 'main-menu';
+  const node = useRef();
+  useOnClickOutside(node, () => setopenNav(false));
   return (
     <AppStyle>
       <Router>
         <Header />
-        <div>
-          <Burger open={open} setOpen={setOpen} />
-          <NavBar open={open} setOpen={setOpen} />
+        <div ref={node}>
+          <Burger
+            openNav={openNav}
+            setopenNav={setopenNav}
+            aria-controls={menuId}
+          />
+          <NavBar openNav={openNav} setopenNav={setopenNav} id={menuId} />
         </div>
         <div className="homePage">
           <Switch>

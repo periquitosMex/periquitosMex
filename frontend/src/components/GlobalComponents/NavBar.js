@@ -4,13 +4,14 @@ import styled from 'styled-components';
 import { FaRegAddressCard, FaAward } from 'react-icons/fa';
 import { IoHome, IoStorefront, IoCalendar, IoLibrary } from 'react-icons/io5';
 import { ImBook } from 'react-icons/im';
-import { bool } from 'prop-types';
 
 const NavBarStyle = styled.div`
   height: 5vh;
   width: 100vw;
   background-color: var(--nav-bg);
   align-items: center;
+  z-index: 0;
+
   ul {
     display: flex;
     align-items: center;
@@ -28,6 +29,8 @@ const NavBarStyle = styled.div`
       letter-spacing: 1px;
       font-weight: bold;
       pointer: cursor;
+      text-decoration: none;
+      transition: color 0.3s linear;
       &:hover {
         background-color: var(--nav-active);
       }
@@ -52,15 +55,14 @@ const NavBarStyle = styled.div`
     width: 15vw;
     text-align: left;
     position: absolute;
-    top: 0;
     left: 0;
     transition: transform 0.3s ease-in-out;
     transform: translateX(-100%);
-    transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(-100%)')};
+    transform: ${({ openNav }) =>
+      openNav ? 'translateX(0)' : 'translateX(-100%)'};
     ul {
       flex-direction: column;
       width: 100%;
-      justify-content: center;
       a {
         padding: 0.5rem;
         height: 10.5vh;
@@ -76,35 +78,37 @@ const NavBarStyle = styled.div`
   }
 `;
 
-export default function NavBar({ open }) {
+export default function NavBar({ openNav }) {
+  const isHidden = !!openNav;
+  const tabIndex = isHidden ? 0 : -1;
   return (
-    <NavBarStyle open={open}>
+    <NavBarStyle openNav={openNav} aria-hidden={!isHidden}>
       <ul>
-        <NavLink to="/" exact>
+        <NavLink to="/" exact tabIndex={tabIndex}>
           <IoHome className="navIcons" />
           <li className="navResponsive-hideItem">Inicio</li>
         </NavLink>
-        <NavLink to="tienda">
+        <NavLink to="tienda" tabIndex={tabIndex}>
           <IoStorefront className="navIcons" />
           <li className="navResponsive-hideItem">Tienda</li>
         </NavLink>
-        <NavLink to="eventos">
+        <NavLink to="eventos" tabIndex={tabIndex}>
           <IoCalendar className="navIcons" />
           <li className="navResponsive-hideItem">Eventos</li>
         </NavLink>
-        <NavLink to="socios">
+        <NavLink to="socios" tabIndex={tabIndex}>
           <FaRegAddressCard className="navIcons" />
           <li className="navResponsive-hideItem">Socio PMX</li>
         </NavLink>
-        <NavLink to="revista">
+        <NavLink to="revista" tabIndex={tabIndex}>
           <ImBook className="navIcons" />
           <li className="navResponsive-hideItem">Revista PMX</li>
         </NavLink>
-        <NavLink to="biblioteca">
+        <NavLink to="biblioteca" tabIndex={tabIndex}>
           <IoLibrary className="navIcons" />
           <li className="navResponsive-hideItem">Biblioteca PMX</li>
         </NavLink>
-        <NavLink to="fama">
+        <NavLink to="fama" tabIndex={tabIndex}>
           <FaAward className="navIcons" />
           <li className="navResponsive-hideItem">Salón de la fama</li>
         </NavLink>
@@ -112,7 +116,3 @@ export default function NavBar({ open }) {
     </NavBarStyle>
   );
 }
-
-NavBar.prototype = {
-  open: bool.isRequired,
-};
