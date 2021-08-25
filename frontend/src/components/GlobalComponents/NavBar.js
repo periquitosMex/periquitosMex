@@ -10,7 +10,7 @@ const NavBarStyle = styled.div`
   width: 100vw;
   background-color: var(--nav-bg);
   align-items: center;
-  z-index: 0;
+  z-index: 5;
 
   ul {
     display: flex;

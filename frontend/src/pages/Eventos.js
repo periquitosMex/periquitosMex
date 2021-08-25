@@ -1,5 +1,4 @@
 import React from 'react';
-import PostGridItem from '../components/Posts/PostGridItem';
 
 export default function Eventos() {
   return (

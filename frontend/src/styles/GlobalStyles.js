@@ -36,7 +36,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .container {
-    max-width: 1200px;
+    max-width: 1300px;
     width: 95%;
     margin: 0 auto;
   }
@@ -44,6 +44,12 @@ const GlobalStyles = createGlobalStyle`
   [data-scrollbar] {
     height: 76.7vh;
     overflow: hidden;
+    @media only screen and (max-width: 768px) {
+    height: 81.7vh;
+  }
+    @media only screen and (max-height: 640px) {
+    height: 78.7vh;
+  }
     .scrollbar-track.scrollbar-track-y {
       z-index: 105;
       background: transparent;
@@ -52,6 +58,7 @@ const GlobalStyles = createGlobalStyle`
       }
     }
   }
+
 `;
 
 export default GlobalStyles;
