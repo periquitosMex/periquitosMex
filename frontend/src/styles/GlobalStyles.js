@@ -36,9 +36,21 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .container {
-    max-width: 90%;
+    max-width: 1200px;
     width: 95%;
     margin: 0 auto;
+  }
+  /* Smooth Scroll  */
+  [data-scrollbar] {
+    height: 76.7vh;
+    overflow: hidden;
+    .scrollbar-track.scrollbar-track-y {
+      z-index: 105;
+      background: transparent;
+      .scrollbar-thumb-y {
+        background: var(--nav-item);
+      }
+    }
   }
 `;
 

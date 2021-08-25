@@ -3,20 +3,23 @@ import styled from 'styled-components';
 
 export const StyledBurger = styled.button`
   position: absolute;
-  top: 10%;
-  left: 2rem;
-  display: flex;
+  top: 7%;
+  left: 1.5rem;
+  display: none;
   flex-direction: column;
   justify-content: space-around;
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
   background: transparent;
   border: none;
   cursor: pointer;
   padding: 0;
   z-index: 20;
+  @media only screen and (max-width: 768px) {
+    display: flex;
+  }
   span {
-    width: 2rem;
+    width: 2.6rem;
     height: 0.3rem;
     background-color: var(--text-header);
     border-radius: 30px;

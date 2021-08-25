@@ -23,6 +23,17 @@ const HeaderStyle = styled.div`
     font-size: 1.4rem;
     color: var(--text-p);
   }
+  @media only screen and (max-width: 540px) {
+    .imageLogo {
+      width: 70px;
+    }
+    .heading {
+      display: none;
+    }
+    .subheading {
+      display: none;
+    }
+  }
 `;
 
 export default function Header() {
@@ -30,8 +41,10 @@ export default function Header() {
     <HeaderStyle>
       <img src={PMXLogo} alt="" className="imageLogo" />
       <div>
-        <h1 className="header">PeriquitosMex</h1>
-        <h2>Es algo mas que criar aves, es un estilo de vida...</h2>
+        <h1 className="heading">PeriquitosMex</h1>
+        <h2 className="subheading">
+          Es algo mas que criar aves, es un estilo de vida...
+        </h2>
       </div>
     </HeaderStyle>
   );

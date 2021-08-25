@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 const TextStyle = styled.div`
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   line-height: 2.1rem;
-  margin: 0 auto;
   @media only screen and (max-width: 768px) {
+    line-height: 1.7rem;
     font-size: 1.4rem;
   }
 `;

@@ -42,6 +42,9 @@ const NavBarStyle = styled.div`
         text-align: center;
         padding: 0 0.5rem;
       }
+      svg {
+        fill: var(--text-header);
+      }
       .navIcons {
         display: none;
       }
@@ -52,7 +55,7 @@ const NavBarStyle = styled.div`
     flex-direction: column;
     justify-content: center;
     height: 100vh;
-    width: 15vw;
+    width: 10vw;
     text-align: left;
     position: absolute;
     left: 0;
@@ -78,37 +81,80 @@ const NavBarStyle = styled.div`
   }
 `;
 
-export default function NavBar({ openNav }) {
+export default function NavBar({ openNav, setopenNav }) {
   const isHidden = !!openNav;
   const tabIndex = isHidden ? 0 : -1;
   return (
     <NavBarStyle openNav={openNav} aria-hidden={!isHidden}>
       <ul>
-        <NavLink to="/" exact tabIndex={tabIndex}>
+        <NavLink
+          to="/"
+          exact
+          tabIndex={tabIndex}
+          onClick={() => setopenNav(!openNav)}
+          role="button"
+          onKeyDown={() => setopenNav(!openNav)}
+        >
           <IoHome className="navIcons" />
           <li className="navResponsive-hideItem">Inicio</li>
         </NavLink>
-        <NavLink to="tienda" tabIndex={tabIndex}>
+        <NavLink
+          to="tienda"
+          tabIndex={tabIndex}
+          onClick={() => setopenNav(!openNav)}
+          role="button"
+          onKeyDown={() => setopenNav(!openNav)}
+        >
           <IoStorefront className="navIcons" />
           <li className="navResponsive-hideItem">Tienda</li>
         </NavLink>
-        <NavLink to="eventos" tabIndex={tabIndex}>
+        <NavLink
+          to="eventos"
+          tabIndex={tabIndex}
+          onClick={() => setopenNav(!openNav)}
+          role="button"
+          onKeyDown={() => setopenNav(!openNav)}
+        >
           <IoCalendar className="navIcons" />
           <li className="navResponsive-hideItem">Eventos</li>
         </NavLink>
-        <NavLink to="socios" tabIndex={tabIndex}>
+        <NavLink
+          to="socios"
+          tabIndex={tabIndex}
+          onClick={() => setopenNav(!openNav)}
+          role="button"
+          onKeyDown={() => setopenNav(!openNav)}
+        >
           <FaRegAddressCard className="navIcons" />
           <li className="navResponsive-hideItem">Socio PMX</li>
         </NavLink>
-        <NavLink to="revista" tabIndex={tabIndex}>
+        <NavLink
+          to="revista"
+          tabIndex={tabIndex}
+          onClick={() => setopenNav(!openNav)}
+          role="button"
+          onKeyDown={() => setopenNav(!openNav)}
+        >
           <ImBook className="navIcons" />
           <li className="navResponsive-hideItem">Revista PMX</li>
         </NavLink>
-        <NavLink to="biblioteca" tabIndex={tabIndex}>
+        <NavLink
+          to="biblioteca"
+          tabIndex={tabIndex}
+          onClick={() => setopenNav(!openNav)}
+          role="button"
+          onKeyDown={() => setopenNav(!openNav)}
+        >
           <IoLibrary className="navIcons" />
           <li className="navResponsive-hideItem">Biblioteca PMX</li>
         </NavLink>
-        <NavLink to="fama" tabIndex={tabIndex}>
+        <NavLink
+          to="fama"
+          tabIndex={tabIndex}
+          onClick={() => setopenNav(!openNav)}
+          role="button"
+          onKeyDown={() => setopenNav(!openNav)}
+        >
           <FaAward className="navIcons" />
           <li className="navResponsive-hideItem">Salón de la fama</li>
         </NavLink>

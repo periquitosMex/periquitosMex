@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Text from '../GlobalComponents/Text';
+import GridItem from './GridItem';
 
 const PostItemStyle = styled.div`
   max-width: 100vw;
@@ -25,7 +26,7 @@ const PostItemStyle = styled.div`
   }
 `;
 
-export default function PostItem({
+export default function PostGridItem({
   title = 'Heading',
   desc = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat et voluptatibus libero vero atque praesentium corrupti qui asperiores numquam quam.',
 }) {
@@ -33,6 +34,7 @@ export default function PostItem({
     <PostItemStyle>
       <h1 className="postItem_heading">{title}</h1>
       <Text>{desc}</Text>
+      <GridItem />
     </PostItemStyle>
   );
 }

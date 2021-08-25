@@ -1,9 +1,12 @@
 import React from 'react';
+import StorePost from '../components/Posts/StorePost';
 
 export default function Tienda() {
   return (
     <div>
-      <h1>Esta es la tienda</h1>
+      <div className="container">
+        <StorePost />
+      </div>
     </div>
   );
 }

@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import styled from 'styled-components';
-import { useOnClickOutside } from './components/Burger/Hook';
+import { useOnClickOutside } from './components/GlobalComponents/Hook';
 import NavBar from './components/GlobalComponents/NavBar';
 import BibliotecaPMX from './pages/BibliotecaPMX';
 import SalonDeFama from './pages/SalonDeFama';
@@ -10,16 +9,11 @@ import Eventos from './pages/Eventos';
 import Inicio from './pages/Inicio';
 import SocioPMX from './pages/SocioPMX';
 import Tienda from './pages/Tienda';
+import Periquitos from './pages/Periquitos';
 import Header from './components/GlobalComponents/Header';
 import Footer from './components/GlobalComponents/Footer';
 import Burger from './components/Burger/Burger';
-
-const AppStyle = styled.div`
-  width: 100vw;
-  .homePage {
-    display: flex;
-  }
-`;
+import SmoothScroll from './components/GlobalComponents/SmoothScroll';
 
 function App() {
   const [openNav, setopenNav] = useState(false);
@@ -27,18 +21,20 @@ function App() {
   const node = useRef();
   useOnClickOutside(node, () => setopenNav(false));
   return (
-    <AppStyle>
+    <>
       <Router>
         <Header />
         <div ref={node}>
-          <Burger
-            openNav={openNav}
-            setopenNav={setopenNav}
-            aria-controls={menuId}
-          />
+          <span className="menuIcon">
+            <Burger
+              openNav={openNav}
+              setopenNav={setopenNav}
+              aria-controls={menuId}
+            />
+          </span>
           <NavBar openNav={openNav} setopenNav={setopenNav} id={menuId} />
         </div>
-        <div className="homePage">
+        <SmoothScroll>
           <Switch>
             <Route path="/tienda">
               <Tienda />
@@ -58,14 +54,17 @@ function App() {
             <Route path="/fama">
               <SalonDeFama />
             </Route>
+            <Route path="/PeriquitosMex">
+              <Periquitos />
+            </Route>
             <Route path="/">
               <Inicio />
             </Route>
           </Switch>
-        </div>
+        </SmoothScroll>
         <Footer />
       </Router>
-    </AppStyle>
+    </>
   );
 }
 
