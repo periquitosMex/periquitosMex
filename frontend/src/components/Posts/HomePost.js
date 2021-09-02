@@ -1,21 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import PostItem from './PostItem';
-import PostGridItem from './PostGridItem';
+import GroupGridItem from './GroupGridItem';
 
-const PostStyle = styled.div`
-  .text-link {
-    text-decoration: underline;
-    font-style: italic;
-    color: var(--nav-active);
-  }
-`;
+const PostStyle = styled.div``;
 
 export default function HomePost() {
   return (
     <PostStyle>
       <PostItem
-        title={<h1 className="title">Bienvenido a Periquitos Mex</h1>}
+        title="Bienvenido a Periquitos Mex"
         desc={
           <>
             <p>
@@ -108,8 +102,8 @@ export default function HomePost() {
           </>
         }
       />
-      <PostGridItem
-        title={<h1 className="title">Familia PeriquitosMex</h1>}
+      <GroupGridItem
+        title="Familia PeriquitosMex"
         desc={
           <>
             <p>

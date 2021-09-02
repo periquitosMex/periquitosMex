@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { useOnClickOutside } from './components/GlobalComponents/Hook';
-import NavBar from './components/GlobalComponents/NavBar';
+import { useOnClickOutside } from './components/Menu/Hook';
+import NavBar from './components/Menu/NavBar';
 import BibliotecaPMX from './pages/BibliotecaPMX';
 import SalonDeFama from './pages/SalonDeFama';
 import RevistaPMX from './pages/RevistaPMX';
@@ -12,7 +12,7 @@ import Tienda from './pages/Tienda';
 import Periquitos from './pages/Periquitos';
 import Header from './components/GlobalComponents/Header';
 import Footer from './components/GlobalComponents/Footer';
-import Burger from './components/Burger/Burger';
+import Burger from './components/Menu/Burger';
 import SmoothScroll from './components/GlobalComponents/SmoothScroll';
 
 function App() {

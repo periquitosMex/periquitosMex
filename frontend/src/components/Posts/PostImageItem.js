@@ -24,6 +24,7 @@ const PostItemStyle = styled.div`
   img {
     max-width: 400px;
     align-self: center;
+    margin-top: 2.5rem;
   }
   @media only screen and (max-width: 768px) {
     .postItem_heading {

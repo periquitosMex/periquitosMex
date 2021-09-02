@@ -1,10 +1,10 @@
 import React from 'react';
+import EventPost from '../components/Posts/EventPost';
 
 export default function Eventos() {
   return (
     <div className="container">
-      Esta es la pagina de eventos
-      <h1>events Page</h1>
+      <EventPost />
     </div>
   );
 }

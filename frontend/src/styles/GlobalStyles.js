@@ -39,6 +39,13 @@ const GlobalStyles = createGlobalStyle`
     max-width: 1300px;
     width: 95%;
     margin: 0 auto;
+    padding-bottom: 4vh;
+  }
+
+  .text-link {
+    text-decoration: underline;
+    font-style: italic;
+    color: var(--nav-active);
   }
   /* Smooth Scroll  */
   [data-scrollbar] {

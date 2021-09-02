@@ -1,6 +1,6 @@
 import PMXLogo from '../images/Logos/PMXLogo.png';
-import LogoAvesMich from '../images/Logos/LogoAvesMich.png';
 import LogoAvesDurango from '../images/Logos/LogoAvesDurango.png';
+import LogoAvesMich from '../images/Logos/LogoAvesMich.png';
 import LogoAvesVeracruz from '../images/Logos/LogoAvesVeracruz.png';
 import LogoAvesZacatecas from '../images/Logos/LogoAvesZacatecas.png';
 import LogoBudgerigarClubPlueba from '../images/Logos/LogoBudgerigarClubPuebla.png';
