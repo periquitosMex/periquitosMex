@@ -1,7 +1,11 @@
 import React from 'react';
+import { ExpoSahuayo } from '../../assets/data/ExpoSahuayo';
 import PostImageItem from './PostImageItem';
 import ExpoAvesMich2021 from '../../assets/images/ExpoAvesMich2021.png';
 import ImageGridItem from '../ImageGrid/ImageGridItem';
+import ResultadosSahuayo2021 from '../../assets/downloads/ResultadosSahuayo2021.pdf';
+import EventoSahuayo from '../../assets/images/eventoSahuayo.png';
+import EventoCCS from '../../assets/images/EventoCCS.jpeg';
 
 export default function EventPost() {
   return (
@@ -76,6 +80,79 @@ export default function EventPost() {
             <p>Clic para descargar archivo:</p>
           </>
         }
+      />
+      <ImageGridItem
+        title="Entradas y Resultados Expo-Show PeriquitosMex Sahuayo 2021"
+        desc={
+          <>
+            <p>
+              El pasado 13 y 14 se llevó a cabo el primer evento PMX del año
+              2021 en la ciudad de Sahuayo, Michoacán, el cual contó con la
+              presencia de criadores que acudieron de distintos estados del
+              país.
+            </p>
+            <br />
+            <p>
+              Entraron a concurso un total de 108 periquitos y se otorgaron
+              aproximádamente 75 premios en total.
+            </p>
+            <br />
+            <p>
+              El juez internacional WBO{' '}
+              <span className="bold-text"> Bob Wilson</span> estuvo a cargo del
+              la mentoría y apoyo para el juzgamiento, el juez en entrenamiento
+              para Periquitos Australianos fue{' '}
+              <span className="bold-text"> Liliana Ramirez</span> y el juez en
+              entrenamiento para Periquitos Ingleses fue el{' '}
+              <span className="bold-text"> Mvz. Carlos Fuentes</span>. En esta
+              ocasión, la{' '}
+              <span className="bold-text"> Mvz. Mhyriam Martínez</span> realizó
+              tareas de auxiliar de juez (Steward) como parte de su formación de
+              juez ante FOCDM.
+            </p>
+            <br />
+            <p>Clic para descargar archivo:</p>
+          </>
+        }
+        photos={ExpoSahuayo}
+        link={ResultadosSahuayo2021}
+      />
+      <PostImageItem
+        title="Primer evento del año realizado por el grupo Club de Criadores del Sureste"
+        desc={
+          <>
+            <p>
+              Videoconferencia{' '}
+              <span className="bold-text"> "El periquito de Exhibición"</span>{' '}
+              con Jesús Galvan desde Monterrey N.L. Sabádo 27 de Febrero/2021
+              18:00 horas CST
+            </p>
+          </>
+        }
+        image={EventoCCS}
+      />
+      <PostImageItem
+        title="Federación Mexicana de Colombicultores A.C., Comunidad Ornitológica de PeriquitosMex A.C. y AvesMich"
+        desc={
+          <>
+            <p>
+              Exposición de palomas de fantasía, buchones españoles y buchones
+              alteños. // Exposición de gallos miniatura y gallinas de raza //
+              Exposición de periquitos australianos e ingleses. Jueces
+              nacionales e internacionales.
+            </p>
+            <br />
+            <p>
+              Juez de periquitos australianos:{' '}
+              <span className="bold-text"> Bob Wilson</span>
+            </p>
+            <br />
+            <span className="bold-text">
+              13 y 14 de Marzo / Sahuayo, Michoacán
+            </span>
+          </>
+        }
+        image={EventoSahuayo}
       />
     </div>
   );

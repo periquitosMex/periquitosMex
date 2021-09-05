@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PostItem from './PostItem';
-import GroupGridItem from './GroupGridItem';
+import GroupGridItem from '../ImageGrid/GroupGridItem';
 
 const PostStyle = styled.div``;
 

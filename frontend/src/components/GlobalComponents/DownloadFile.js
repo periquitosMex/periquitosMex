@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import ResultadosIrapuato2021 from '../../assets/downloads/ResultadosIrapuato2021.pdf';
 import downloadBtn from '../../assets/images/downloadBtn.png';
 
 const DownloadFilesStyle = styled.div`
@@ -11,10 +10,10 @@ const DownloadFilesStyle = styled.div`
   }
 `;
 
-export default function DownloadFile() {
+export default function DownloadFile({ href }) {
   return (
     <DownloadFilesStyle>
-      <a href={ResultadosIrapuato2021} download>
+      <a href={href} download>
         <img
           src={downloadBtn}
           alt="download button"

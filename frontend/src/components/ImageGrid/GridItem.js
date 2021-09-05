@@ -2,7 +2,7 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import styled from 'styled-components';
 import grupos from '../../assets/data/Grupos';
-import GroupCard from './GroupCard';
+import GroupCard from '../Posts/GroupCard';
 
 const GridItemStyle = styled.div`
   margin-top: 3rem;

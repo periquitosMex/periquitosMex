@@ -1,7 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import Gallery from 'react-photo-gallery';
 import Carousel, { Modal, ModalGateway } from 'react-images';
-import { ExpoIrapuato } from '../../assets/data/ExpoIrapuato';
 
 const customStyles = {
   container: (base) => ({
@@ -13,7 +12,7 @@ const customStyles = {
   }),
 };
 
-function ImageGrid() {
+function ImageGrid({ photos }) {
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
@@ -30,14 +29,14 @@ function ImageGrid() {
 
   return (
     <div>
-      <Gallery photos={ExpoIrapuato} onClick={openLightbox} />
+      <Gallery photos={photos} onClick={openLightbox} />
       <ModalGateway>
         {viewerIsOpen ? (
           <Modal onClose={closeLightbox}>
             <Carousel
               styles={customStyles}
               currentIndex={currentImage}
-              views={ExpoIrapuato.map((x) => ({
+              views={photos.map((x) => ({
                 ...x,
                 srcset: x.srcSet,
                 caption: x.title,
