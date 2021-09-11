@@ -1,6 +1,6 @@
 import React from 'react';
-import PostImageItem from '../components/Posts/PostImageItem';
-import PostItem from '../components/Posts/PostItem';
+import PostImageItem from '../components/GlobalComponents/PostImageItem';
+import PostItem from '../components/GlobalComponents/PostItem';
 import fotoRevista from '../assets/images/fotoRevista.jpg';
 
 export default function Periquitos() {

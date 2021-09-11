@@ -1,5 +1,5 @@
 import React from 'react';
-import StorePost from '../components/Posts/StorePost';
+import StorePost from '../components/Posts/StorePosts';
 
 export default function Tienda() {
   return (

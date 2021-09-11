@@ -1,5 +1,5 @@
 import React from 'react';
-import SocioPost from '../components/Posts/SocioPost';
+import SocioPost from '../components/Posts/SocioPosts';
 
 export default function SocioPMX() {
   return (

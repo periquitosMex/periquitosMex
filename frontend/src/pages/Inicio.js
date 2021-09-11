@@ -1,5 +1,5 @@
 import React from 'react';
-import HomePost from '../components/Posts/HomePost';
+import HomePost from '../components/Posts/HomePosts';
 
 export default function Inicio() {
   return (

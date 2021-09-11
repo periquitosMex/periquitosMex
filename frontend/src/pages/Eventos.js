@@ -1,5 +1,5 @@
 import React from 'react';
-import EventPost from '../components/Posts/EventPost';
+import EventPost from '../components/Posts/EventPosts';
 
 export default function Eventos() {
   return (

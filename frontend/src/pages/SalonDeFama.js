@@ -1,8 +1,9 @@
 import React from 'react';
+import FamaPosts from '../components/Posts/FamaPosts';
 
 const SalonDeFama = () => (
-  <div>
-    <h1>This is da Salon</h1>
+  <div className="container">
+    <FamaPosts />
   </div>
 );
 

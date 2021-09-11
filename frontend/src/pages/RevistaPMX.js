@@ -1,9 +1,10 @@
 import React from 'react';
+import RevistaPost from '../components/Posts/RevistaPosts';
 
 export default function RevistaPMX() {
   return (
-    <div>
-      <h1>Esta es la Revista Homie</h1>
+    <div className="container">
+      <RevistaPost />
     </div>
   );
 }
