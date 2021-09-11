@@ -13,7 +13,7 @@ export default function GridItem() {
     <GridItemStyle>
       <Grid container spacing={2}>
         {grupos.map((grupo, i) => (
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid item xs={12} sm={6} md={4} key={grupo.id}>
             <GroupCard key={grupos.id} grupo={grupo} i={i} />
           </Grid>
         ))}

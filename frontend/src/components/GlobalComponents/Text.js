@@ -13,7 +13,7 @@ const TextStyle = styled.div`
 export default function Text({ children }) {
   return (
     <TextStyle>
-      <p>{children}</p>
+      <span>{children}</span>
     </TextStyle>
   );
 }

@@ -24,8 +24,6 @@ export default function GroupCard({ grupo, i }) {
   const shadowStyles = useSoftRiseShadowStyles();
   const pageLink = grupo.id;
 
-  console.log(pageLink === 1);
-
   return (
     <GroupCardStyle>
       <Card variant="outlined" className={cx(shadowStyles.root)}>
